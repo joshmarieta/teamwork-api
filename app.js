@@ -20,7 +20,7 @@ let testMessage = '';
 app.route('/test')
   .post((req, res) => {
     testMessage = req.body.message;
-    res.status(200).json({
+    res.status(201).json({
       status: 'success',
       message: 'successfully created a message',
       data: testMessage,
