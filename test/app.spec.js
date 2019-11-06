@@ -28,7 +28,7 @@ describe('Server POST test', () => {
       .end((error, res) => {
         expect(res).to.have.status(201);
         expect(res.body.status).to.equals('success');
-        expect(res.body.data).to.be.equals('hello world');
+        expect(res.body.data).to.equals('Hello world');
         done();
       });
   });
@@ -41,7 +41,7 @@ describe('Server GET test', () => {
       .end((error, res) => {
         expect(res).to.have.status(200);
         expect(res.body.status).to.equals('success');
-        expect(res.body.status).to.equals('string');
+        expect(res.body.status).to.be.a('string');
         done();
       });
   });
