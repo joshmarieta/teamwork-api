@@ -1,0 +1,27 @@
+language: node_js
+node_js:
+  - "stable"
+
+cache:
+  directories:
+    - "node_modules"
+
+install:
+  - npm install
+
+jobs:
+  include:
+    # this is the testing stage
+    - stage: test
+      script: npm test
+    # this is the deployment stage
+    - stage: deploy
+      deloy:
+        provider: heroku
+        api_key: $HEROKU_API_KEY
+        app: roroa-api
+
+branches:
+  only:
+  - master
+  - develop
