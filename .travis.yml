@@ -14,12 +14,19 @@ jobs:
     # this is the testing stage
     - stage: test
       script: npm test
+      script: echo "Unit test completed"
     # this is the deployment stage
     - stage: deploy
+      script: echo "Deploying to Heroku"
       deloy:
         provider: heroku
+        buildpack: nodejs
         api_key: $HEROKU_API_KEY
         app: roroa-api
+        on:
+          repo: Victor-Kariuki/roroa-api
+
+        script: echo "Deployment to Heroku completed"
 
 branches:
   only:
