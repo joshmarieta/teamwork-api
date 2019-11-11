@@ -22,9 +22,9 @@ jobs:
         provider: heroku
         buildpack: nodejs
         api_key: $HEROKU_API_KEY
-        app: roroa-api
+        app: teamwork-application-program-i
         on:
-          repo: Victor-Kariuki/roroa-api
+          repo: joshmarieta/teamwork-api
 
         script: echo "Deployment to Heroku completed"
 
